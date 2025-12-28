@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AfricaTravelGo — CMS Editor</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-17843153197"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17843153197');
+</script>
+<meta content="noindex,nofollow" name="robots"/>
+<link href="editor.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I contact you?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the contact page for questions, corrections, or partnership inquiries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you use affiliate links?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some pages may include affiliate links; we aim to keep recommendations practical and unbiased."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle privacy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We collect minimal data and explain details in the privacy policy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I reuse your content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Please request permission for republication; personal sharing with attribution is welcome."
+      }
+    }
+  ]
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://africatravelgo.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AfricaTravelGo — CMS Editor",
+      "item": "https://africatravelgo.com/editor.html"
+    }
+  ]
+}</script></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top" role="banner">
+<div class="wrap top__inner">
+<div class="brand">
+<div aria-hidden="true" class="mark">GZ</div>
+<div>
+<div class="name">AfricaTravelGo — CMS Editor</div>
+<div class="sub">Manage destinations .</div>
+</div>
+</div>
+<nav aria-label="Editor actions" class="nav">
+<a class="btn" href="index.html">Back to site</a>
+</nav>
+</div>
+</header>
+<main class="wrap" id="main" role="main">
+<section aria-label="Editor toolbar" class="panel hero">
+<div class="row">
+<div class="col">
+<h1 style="margin:0;">Destinations</h1>
+<p class="muted" style="margin:6px 0 0 0;">
+            Load, edit, and export. Paste the output into <code>data.js</code>.
+          </p>
+</div>
+<div aria-label="Toolbar" class="col tools">
+<button class="btn btn--primary" id="addNew" type="button">Add destination</button>
+<button class="btn" id="loadFromDataJs" type="button">Load from site</button>
+<button class="btn" id="downloadJson" type="button">Download JSON</button>
+<button class="btn" id="copyJson" type="button">Copy JSON</button>
+<label aria-label="Import JSON" class="btn file">
+            Import JSON
+            <input accept=".json,application/json" id="importFile" type="file"/>
+</label>
+<button class="btn btn--danger" id="resetEditor" type="button">Reset</button>
+</div>
+</div>
+<div class="row" style="margin-top:12px;">
+<input class="input" id="search" placeholder="Search destinations (name, region, type, tags)"/>
+</div>
+</section>
+<section aria-label="Editor layout" class="grid">
+<aside aria-label="Destination list" class="list panel">
+<div class="section-head">
+<h2 style="margin:0;">List</h2>
+<div class="muted"><span id="count">0</span></div>
+</div>
+<div id="list" style="margin-top:12px;"></div>
+</aside>
+<section aria-label="Destination editor" class="editor panel">
+<div class="section-head">
+<h2 style="margin:0;">Edit</h2>
+<div class="muted" id="status">Select a destination from the list.</div>
+</div>
+<form autocomplete="off" class="form" id="form">
+<div class="two">
+<label>
+<span>ID (unique)</span>
+<input class="input" name="id" placeholder="e.g., victoria-falls" required=""/>
+</label>
+<label>
+<span>Name</span>
+<input class="input" name="name" placeholder="e.g., Victoria Falls (Mosi-oa-Tunya)" required=""/>
+</label>
+</div>
+<div class="two">
+<label>
+<span>Region</span>
+<input class="input" name="region" placeholder="e.g., Matabeleland North"/>
+</label>
+<label>
+<span>Type</span>
+<input class="input" name="type" placeholder="e.g., Nature, Safari, Heritage"/>
+</label>
+</div>
+<label>
+<span>Summary</span>
+<textarea class="textarea" name="summary" placeholder="Short, clear description for cards and SEO." rows="3"></textarea>
+</label>
+<div class="two">
+<label>
+<span>Hero image path</span>
+<input class="input" name="heroImage" placeholder="assets/images/destinations/victoria-falls.jpg"/>
+</label>
+<div aria-label="Image preview" class="imgprev">
+<div class="imgprev__label">Preview</div>
+<div class="imgprev__box">
+<img alt="Destination preview" id="imgPreview"/>
+</div>
+</div>
+</div>
+<div class="two">
+<label>
+<span>Latitude</span>
+<input class="input" inputmode="decimal" name="lat" placeholder="-17.9243"/>
+</label>
+<label>
+<span>Longitude</span>
+<input class="input" inputmode="decimal" name="lng" placeholder="25.8572"/>
+</label>
+</div>
+<div class="two">
+<label>
+<span>Best time to visit</span>
+<input class="input" name="bestTime" placeholder="e.g., Apr–Oct"/>
+</label>
+<label>
+<span>Budget range</span>
+<input class="input" name="estimatedBudget" placeholder="e.g., $–$$$, Mid-range"/>
+</label>
+</div>
+<label>
+<span>Base / stay hint</span>
+<input class="input" name="stayHint" placeholder="e.g., Victoria Falls Town, Main Camp"/>
+</label>
+<label>
+<span>Tags (comma-separated)</span>
+<input class="input" name="tags" placeholder="UNESCO, Adventure, Family-friendly"/>
+</label>
+<label>
+<span>Highlights (comma-separated)</span>
+<input class="input" name="highlights" placeholder="Waterfall viewpoints, River cruise, Game drives"/>
+</label>
+<label>
+<span>Gallery images (comma-separated paths)</span>
+<input class="input" name="gallery" placeholder="assets/images/destinations/victoria-falls.jpg, assets/images/destinations/victoria-falls-2.jpg"/>
+</label>
+<div class="row buttons">
+<button class="btn btn--primary" type="submit">Save</button>
+<button class="btn btn--danger" id="delete" type="button">Delete</button>
+</div>
+</form>
+<section class="panel" style="margin-top:12px;">
+<div class="section-head">
+<h3 style="margin:0;">Paste-ready JSON</h3>
+<div class="muted">Sorted by name.</div>
+</div>
+<textarea class="textarea mono" id="output" readonly="" rows="14"></textarea>
+</section>
+</section>
+</section>
+</main>
+<script src="data.js"></script>
+<script src="editor.js"></script>
+</body>
+</html>
