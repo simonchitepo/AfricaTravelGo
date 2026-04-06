@@ -10,7 +10,7 @@ Since its launch in late 2025, AfricaTravelGo has demonstrated significant growt
 | **Total Page Views** | **35,828** | 30,707/mo |
 | **Total Hits** | **58,482** | 38,988/mo |
 | **Data Delivered** | **6.54 GB** | 5.55 GB (Jan) |
-![alt text](image.png)
+![Performance Stats](performance_stats.png)
 
 ### 📈 Technical & SEO Performance
 I monitor the site's health using Google Lighthouse/PageSpeed Insights to ensure accessibility for global users.
