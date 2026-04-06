@@ -1,5 +1,6 @@
 # 🌍 AfricaTravelGo
 > A data-driven travel platform providing logistical intelligence for 50+ African destinations.
+https://africatravelgo.com
 
 ## 📊 Live Project Statistics (Q1 2026)
 Since its launch in late 2025, AfricaTravelGo has demonstrated significant growth and technical stability.
